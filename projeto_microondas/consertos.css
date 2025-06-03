@@ -1,70 +1,212 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+.repair-hero {
+    background: linear-gradient(rgba(255, 107, 0, 0.8), rgba(255, 107, 0, 0.9)), url(imagens/hero-bg.jpg) no-repeat center center / cover;
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
 }
 
-header {
-    background-color: #333;
+.repair-hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.repair-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.repair-hero p.destaque {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.repair-hero p {
+    color: var(--white);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+/* Problemas Comuns */
+.common-problems {
+    margin: 4rem 0;
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.problem-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+}
+
+.problem-card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.problem-card h3 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* 🔥 Card destacado para microondas */
+.problem-card.highlight {
+    background-color: var(--primary); /* Tom de laranja */
     color: white;
-    padding: 15px;
+}
+
+.problem-card.highlight h3 {
+    color: white;
+}
+
+.problem-card.highlight p {
+    color: white;
+}
+
+.problem-card.highlight i {
+    color: white;
+}
+
+/* Processo de Conserto */
+.repair-process {
+    margin: 4rem 0;
+}
+
+.process-steps {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
-header .logo h1 {
-    margin: 0;
+.step {
+    flex: 0 0 calc(25% - 1.5rem);
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-nav ul {
-    list-style: none;
+.step-number {
+    background-color: var(--primary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
+.step-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
 }
 
-.hero {
-    background-color: #f2f2f2;
-    text-align: center;
-    padding: 60px 20px;
+/* Depoimentos */
+.testimonials {
+    margin: 4rem 0;
 }
 
-.hero h2 {
-    margin-top: 0;
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #ff6600;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 6px;
-    margin-top: 15px;
+.testimonial-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.btn:hover {
-    background-color: #e55a00;
+.rating {
+    color: #FFD700;
+    margin-bottom: 1rem;
 }
 
-.info-servico, .detalhes, .chamada {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: auto;
+.client-info {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
 }
 
-.info-servico ul {
-    padding-left: 20px;
+.client-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
+.client-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-info span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .step {
+        flex: 0 0 calc(50% - 1rem);
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .step {
+        flex: 0 0 100%;
+    }
+    
+    .repair-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .repair-hero p.destaque {
+        font-size: 1.2rem;
+    }
 }

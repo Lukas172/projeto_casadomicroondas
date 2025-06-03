@@ -1,126 +1,122 @@
-// script.js - Código completo do carrossel interativo
+// script.js - Código completo do carrossel interativo e funcionalidade de agendamento
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ========== SELEÇÃO DE ELEMENTOS ========== //
-    const track = document.querySelector('.carousel-track'); // Faixa de slides
-    const slides = Array.from(document.querySelectorAll('.carousel-slide')); // Lista de slides
-    const indicators = Array.from(document.querySelectorAll('.indicator')); // Bolinhas indicadoras
-    const nextButton = document.querySelector('.next'); // Botão "próximo"
-    const prevButton = document.querySelector('.prev'); // Botão "anterior"
-    const carouselContainer = document.querySelector('.carousel-container'); // Container principal
+    // ========== CARROSSEL ========== //
+    const initCarousel = () => {
+        // Seleção de elementos
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+        const indicators = Array.from(document.querySelectorAll('.indicator'));
+        const nextButton = document.querySelector('.carousel-next');
+        const prevButton = document.querySelector('.carousel-prev');
+        const carouselContainer = document.querySelector('.carousel-container');
 
-    // ========== CONFIGURAÇÕES ========== //
-    let currentSlide = 0; // Slide atual
-    const totalSlides = slides.length; // Total de slides
-    let autoScrollInterval; // Variável para controlar o auto-scroll
-    const autoScrollDelay = 5000; // 5 segundos entre transições
-
-    // ========== FUNÇÕES PRINCIPAIS ========== //
-
-    /**
-     * Atualiza a posição do carrossel e os indicadores
-     */
-    const updateCarousel = () => {
-        // Movimenta a faixa de slides
-        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        // Configurações
+        if (!track || !slides.length) return; // Sai se não encontrar elementos
         
-        // Atualiza a classe 'active' nos indicadores
-        indicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === currentSlide);
-        });
-    };
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let autoScrollInterval;
+        const autoScrollDelay = 5000;
 
-    /**
-     * Avança para o próximo slide
-     */
-    const nextSlide = () => {
-        currentSlide = (currentSlide + 1) % totalSlides; // Volta ao início se chegar no final
-        updateCarousel();
-    };
+        // Funções do carrossel
+        const updateCarousel = () => {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        };
 
-    /**
-     * Volta para o slide anterior
-     */
-    const prevSlide = () => {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Vai para o final se estiver no início
-        updateCarousel();
-    };
-
-    /**
-     * Inicia o auto-scroll
-     */
-    const startAutoScroll = () => {
-        autoScrollInterval = setInterval(nextSlide, autoScrollDelay);
-    };
-
-    /**
-     * Para o auto-scroll
-     */
-    const stopAutoScroll = () => {
-        clearInterval(autoScrollInterval);
-    };
-
-    // ========== EVENT LISTENERS ========== //
-
-    // Botão "próximo"
-    nextButton.addEventListener('click', () => {
-        nextSlide();
-        stopAutoScroll(); // Pausa auto-scroll quando o usuário interage
-        startAutoScroll(); // Reinicia após um tempo (opcional)
-    });
-
-    // Botão "anterior"
-    prevButton.addEventListener('click', () => {
-        prevSlide();
-        stopAutoScroll();
-        startAutoScroll(); // Reinicia após um tempo (opcional)
-    });
-
-    // Indicadores de slide (bolinhas)
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            currentSlide = index;
+        const nextSlide = () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
+        };
+
+        const prevSlide = () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        };
+
+        const startAutoScroll = () => {
             stopAutoScroll();
-            startAutoScroll(); // Reinicia após um tempo (opcional)
+            autoScrollInterval = setInterval(nextSlide, autoScrollDelay);
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(autoScrollInterval);
+        };
+
+        // Event listeners do carrossel
+        if (nextButton) nextButton.addEventListener('click', () => {
+            nextSlide();
+            stopAutoScroll();
+            startAutoScroll();
         });
-    });
 
-    // Pausa auto-scroll quando o mouse está sobre o carrossel
-    carouselContainer.addEventListener('mouseenter', stopAutoScroll);
-    carouselContainer.addEventListener('mouseleave', startAutoScroll);
+        if (prevButton) prevButton.addEventListener('click', () => {
+            prevSlide();
+            stopAutoScroll();
+            startAutoScroll();
+        });
 
-    // ========== INICIALIZAÇÃO ========== //
-    updateCarousel(); // Posiciona o primeiro slide
-    startAutoScroll(); // Inicia o auto-scroll
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+                stopAutoScroll();
+                startAutoScroll();
+            });
+        });
 
-    // ========== RECURSOS ADICIONAIS ========== //
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', stopAutoScroll);
+            carouselContainer.addEventListener('mouseleave', startAutoScroll);
+        }
 
-    // Teclado (opcional - navegação com setas)
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') nextSlide();
-        if (e.key === 'ArrowLeft') prevSlide();
-    });
+        // Inicialização
+        updateCarousel();
+        startAutoScroll();
 
-    // Adaptação para touch (opcional)
-    let touchStartX = 0;
-    let touchEndX = 0;
+        // Suporte para teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
 
-    track.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
+        // Suporte para touch
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-    track.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
 
-    /**
-     * Detecta gestos de swipe (toque lateral)
-     */
-    const handleSwipe = () => {
-        const threshold = 50; // Sensibilidade do gesto
-        if (touchEndX < touchStartX - threshold) nextSlide(); // Swipe para esquerda
-        if (touchEndX > touchStartX + threshold) prevSlide(); // Swipe para direita
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        const handleSwipe = () => {
+            const threshold = 50;
+            if (touchEndX < touchStartX - threshold) nextSlide();
+            if (touchEndX > touchStartX + threshold) prevSlide();
+        };
     };
+
+    // ========== AGENDAMENTO ========== //
+    const initAgendamento = () => {
+        const agendarBtn = document.getElementById('agendarBtn');
+        
+        if (agendarBtn) {
+            agendarBtn.addEventListener('click', function() {
+                alert('Serviço agendado com sucesso! Entraremos em contato para confirmar.');
+                // Aqui você pode adicionar mais lógica para o agendamento
+            });
+        }
+    };
+
+    // ========== INICIALIZAÇÃO DOS MÓDULOS ========== //
+    initCarousel();
+    initAgendamento();
 });
