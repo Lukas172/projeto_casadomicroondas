@@ -1,9 +1,63 @@
+:root {
+    --soft-orange: #FFB38A;
+    --light-peach: #FFD7B5;
+    --muted-coral: #FF8C66;
+    --warm-cream: #FFF3E6;
+    --soft-brown: #D4A59A;
+    --warm-white: #FFF9F5;
+}
+/* Estilos da barra de navegação */
+nav {
+    background-color: var(--soft-orange);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.nav-logo {
+    color: var(--warm-white);
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 30px;
+}
+
+.nav-menu a {
+    color: var(--warm-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.nav-menu a:hover {
+    background-color: var(--muted-coral);
+}
+
 /* Fundo geral */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #FFF3E6; /* Bege Claro */
+  background-color: #eae8e7; /* Bege Claro */
   color: #5C3A2E; /* Um marrom escuro suave, derivado do marrom claro */
 }
 
@@ -46,7 +100,7 @@ header p {
 
 .loja img {
   width: 100%;
-  max-height: 300px;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;

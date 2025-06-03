@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos - Casa do Microondas</title>
+    <link rel="stylesheet" href="../Vittor_Micro/PhotoHouse.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Casa do Microondas</div>
+            <ul class="nav-menu">
+                <li><a href="../projeto_microondas/index.html">Início</a></li>
+                <li><a href="../Vittor_Micro/LocHouse.html">Localização</a></li>
+                <li><a href="../Vittor_Micro/PhotoHouse.html">Fotos</a></li>
+                <li><a href="busca.html">Busca e Entrega</a></li>
+                <li><a href="consertos.html">Consertos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <button class="mobile-menu-button">☰</button>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Fotos da Casa do Microondas</h1>
+        <p>Confira imagens de nossa loja e instalações.</p>
+    </header>
+
+        <main>
+    <section class="store">
+        <h2>Loja 1 - Rebouças</h2>
+        <div class="gallery">
+            <img src="../imagens/Loja 1.jpg" alt="Loja 1 - Rebouças">
+            <img src="../imagens/loja1.1.jpg" alt="Loja 1 - Rebouças">
+            <!-- Mais imagens da Loja Matriz -->
+        </div>
+    </section>
+
+    <section class="store">
+        <h2>Loja 2 - Santa Felicidade</h2>
+        <div class="gallery">
+            <img src="../imagens/Loja 2.jpg" alt="Loja 2 - Santa Felicidade">
+            <img src="../imagens/loja 2.2.jpg" alt="Loja 2 - Santa Felicidade">
+            <!-- Mais imagens da Filial -->
+        </div>
+    </section>
+</main>
+
+
+    <script>
+        const btn = document.querySelector('.mobile-menu-button');
+        const menu = document.querySelector('.nav-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>
