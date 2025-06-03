@@ -1,35 +1,110 @@
+/* Fundo geral */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF3E6; /* Bege Claro */
+  color: #5C3A2E; /* Um marrom escuro suave, derivado do marrom claro */
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.loja {
-  background: #fff;
+/* Cabeçalho */
+header {
+  background: linear-gradient(90deg, #FFB38A, #FFD7B5);
   padding: 20px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  color: #5C3A2E;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header p {
+  margin: 10px 0 0;
+}
+
+/* Estilo das seções de loja */
+.loja {
+  background: #FFF9F5; /* Branco Quente */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.loja:hover {
+  transform: translateY(-5px);
 }
 
 .loja h2 {
+  color: #FF8C66; /* Laranja Queimado Suave */
   margin-bottom: 10px;
-  color: #333;
 }
 
 .loja img {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
 
-iframe {
-  border-radius: 8px;
+/* Mapas responsivos */
+.mapa-container iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 10px;
 }
+
+/* Botões */
+.btn {
+  display: inline-block;
+  background-color: #FF8C66; /* Laranja Queimado Suave */
+  color: #FFF9F5; /* Branco Quente */
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #FFB38A; /* Laranja Primário */
+}
+
+/* Rodapé */
+footer {
+  background-color: #FFD7B5; /* Laranja Claro */
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  color: #5C3A2E;
+}
+
+/* Texto geral */
+main {
+  padding: 20px;
+}
+footer {
+  background: linear-gradient(90deg, #FFB38A, #FFD7B5); /* Degradê horizontal */
+  color: #FFF9F5; /* Warm White */
+  text-align: center;
+  padding: 15px 20px;
+  margin-top: 40px;
+  border-top: 1px solid #FF8C66; /* Linha mais fina */
+  border-radius: 20px 20px 0 0; /* Cantos arredondados só em cima */
+  font-size: 0.85em;
+  line-height: 1.4;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Sombra superior leve */
+}
+
+
+
+

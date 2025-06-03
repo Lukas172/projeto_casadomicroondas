@@ -4,35 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Localização das Lojas</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="MicroHouse.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <h1>Localização das Lojas</h1>
-
-  <div class="loja">
-    <h2>Loja 1 - Centro</h2>
-    <img src="imagens/loja1.jpg" alt="Fachada da Loja 1">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=INSIRA_AQUI_O_EMBED" 
-      width="100%" 
-      height="300" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy"></iframe>
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
   </div>
 
-  <div class="loja">
-    <h2>Loja 2 - Bairro</h2>
-    <img src="imagens/loja2.jpg" alt="Fachada da Loja 2">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=INSIRA_AQUI_O_EMBED" 
-      width="100%" 
-      height="300" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy"></iframe>
+  <div id="content" style="display:none;">
+
+    <header>
+      <h1><i class="fas fa-map-marker-alt"></i> Localização das Lojas</h1>
+      <p>Encontre nossas lojas com facilidade e venha nos visitar!</p>
+    </header>
+
+    <main>
+      <section class="loja">
+        <h2><i class="fas fa-store"></i> Loja 1 - Rebouças</h2>
+        <img src="imagens/Loja 1.jpg" alt="Fachada da Loja 1">
+        <div class="mapa-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7205.099459281085!2d-49.265389!3d-25.453313!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce48c9e3e3e4b%3A0x94da37baf10ee50e!2sAv.%20Pres.%20Kennedy%2C%20410%20-%20Rebou%C3%A7as%2C%20Curitiba%20-%20PR%2C%2080220-200!5e0!3m2!1spt-BR!2sbr!4v1748903267718!5m2!1spt-BR!2sbr" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <a class="btn" target="_blank" href="https://www.google.com/maps/place/Av.+Pres.+Kennedy,+410+-+Rebou%C3%A7as,+Curitiba+-+PR,+80220-200">
+          <i class="fas fa-location-arrow"></i> Como Chegar
+        </a>
+      </section>
+
+      <section class="loja">
+        <h2><i class="fas fa-store"></i> Loja 2 - Santa Felicidade</h2>
+        <img src="imagens/Loja 2.jpg" alt="Fachada da Loja 2">
+        <div class="mapa-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28833.129057056423!2d-49.334106!3d-25.400086000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce1ae32d2be93%3A0xea33bfd9dde79809!2sR.%20Saturnino%20Miranda%2C%2084%20-%20Santa%20Felicidade%2C%20Curitiba%20-%20PR%2C%2082030-320%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1748903470950!5m2!1spt-BR!2sus"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <a class="btn" target="_blank" href="https://www.google.com/maps/place/R.+Saturnino+Miranda,+84+-+Santa+Felicidade,+Curitiba+-+PR,+82030-320">
+          <i class="fas fa-location-arrow"></i> Como Chegar
+        </a>
+      </section>
+    </main>
+
+   
+
   </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    });
+  </script>
+<footer>
+  © 2025 Casa do Microondas em Curitiba - Conserto de Microondas Curitiba · Implantado e Customizado por Vector Group
+</footer>
 
 </body>
 </html>
