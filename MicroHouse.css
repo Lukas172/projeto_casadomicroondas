@@ -89,3 +89,22 @@ footer {
 main {
   padding: 20px;
 }
+footer {
+  background: linear-gradient(90deg, #FFB38A, #FFD7B5); /* Degradê horizontal */
+  color: #FFF9F5; /* Warm White */
+  text-align: center;
+  padding: 15px 20px;
+  margin-top: 40px;
+  border-top: 1px solid #FF8C66; /* Linha mais fina */
+  border-radius: 20px 20px 0 0; /* Cantos arredondados só em cima */
+  font-size: 0.85em;
+  line-height: 1.4;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Sombra superior leve */
+}
+
+
+
+
