@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa do Microondas - Conserto Especializado em Curitiba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../projeto_microondas/styles.css">
+    <link rel="stylesheet" href="../Vittor_Micro/LocHouse.css">
+    <link rel="icon" href="../form_cont/icon.png">
+</head>
+<body>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="../projeto_microondas/imagens/Logo_Ofc.jpg" alt="Logo Casa do Microondas">
+                <span>Casa do Microondas</span>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="consertos.html">Consertos</a></li>
+                <li><a href="../Vittor_Micro/LocHouse.html">Localização</a></li>
+                <li><a href="../Vittor_Micro/PhotoHouse.html">Fotos</li>
+                <li><a href="busca.html">Busca e Entrega</a></li>
+                <li><a href="../form_cont/form.html">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Conserto de microondas rápido em Curitiba</h1>
+                <p class="destaque">+ de 10.000 consertos realizados desde 1995!</p>
+                <p>Qualidade, rapidez e garantia de 90 dias em todos os serviços</p>
+                <a href="https://wa.me/554133328000" class="cta-button">
+                    <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
+  <div id="content" style="display:none;">
+
+    <header>
+      <h1><i class="fas fa-map-marker-alt"></i> Localização das Lojas</h1>
+      <p>Encontre nossas lojas com facilidade e venha nos visitar!</p>
+    </header>
+
+    <main>
+      <section class="loja">
+        <h2><i class="fas fa-store"></i> Loja 1 - Rebouças</h2>
+        <img src="../projeto_microondas/imagens/Loja 1.jpg" alt="Fachada da Loja 1">
+        <div class="mapa-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7205.099459281085!2d-49.265389!3d-25.453313!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce48c9e3e3e4b%3A0x94da37baf10ee50e!2sAv.%20Pres.%20Kennedy%2C%20410%20-%20Rebou%C3%A7as%2C%20Curitiba%20-%20PR%2C%2080220-200!5e0!3m2!1spt-BR!2sbr!4v1748903267718!5m2!1spt-BR!2sbr" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <a class="btn" target="_blank" href="https://www.google.com/maps/place/Av.+Pres.+Kennedy,+410+-+Rebou%C3%A7as,+Curitiba+-+PR,+80220-200">
+          <i class="fas fa-location-arrow"></i> Como Chegar
+        </a>
+      </section>
+
+      <section class="loja">
+        <h2><i class="fas fa-store"></i> Loja 2 - Santa Felicidade</h2>
+        <img src="../projeto_microondas/imagens/Loja 2.jpg" alt="Fachada da Loja 2">
+        <div class="mapa-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28833.129057056423!2d-49.334106!3d-25.400086000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce1ae32d2be93%3A0xea33bfd9dde79809!2sR.%20Saturnino%20Miranda%2C%2084%20-%20Santa%20Felicidade%2C%20Curitiba%20-%20PR%2C%2082030-320%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1748903470950!5m2!1spt-BR!2sus"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <a class="btn" target="_blank" href="https://www.google.com/maps/place/R.+Saturnino+Miranda,+84+-+Santa+Felicidade,+Curitiba+-+PR,+82030-320">
+          <i class="fas fa-location-arrow"></i> Como Chegar
+        </a>
+      </section>
+    </main>
+
+   
+
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    });
+  </script>
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Horário de Atendimento</h3>
+                    <p>Segunda a Sexta: 8h às 18h</p>
+                    <p>Sábado: 8h às 12h</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone"></i> (41) 3332-8000</p>
+                    <p><i class="fas fa-envelope"></i> contato@casadomicroondas.com.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua dos Consertos, 123 - Curitiba/PR</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Casa do Microondas © 2025 - Todos os direitos reservados | CNPJ: 12.345.678/0001-99</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../projeto_microondas/script.js"></script>
+    <script src="../projeto_microondas/consertos.js"></script>
+    <script src="../projeto_microondas/busca.js"></script>
+</body>
+</html>
+
